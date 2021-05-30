@@ -1,6 +1,6 @@
-# Quizz
-**Description** : première phase du projet terminée [1re tentative avant visionnage du tutoriel] 
-**Avancement** : première phase du projet terminée [1re tentative avant visionnage du tutoriel] 
+# Quizz  
+**Description** : Questionnaire de vérification de connaissances avec correction automatique   
+**Avancement** : première phase du projet terminée [1re tentative avant visionnage du tutoriel]  
 **Fonctionnalités** : 
 * Génération du contenu HTML des questions avec Javascript (en prévision d'un fonctionnement avec une base de données)
 * Vérification de la présence de réponses à toutes les questions et de la confirmation avant correction automatique
