@@ -1,4 +1,6 @@
 # Quizz  
+Cliquer [ici pour voir le quiz](lysspiral.github.io/quizz_js/) 
+
 **Description** : Questionnaire de vérification de connaissances avec correction automatique 
 
 **Avancement** : première phase du projet terminée [1re tentative avant visionnage du tutoriel]  
