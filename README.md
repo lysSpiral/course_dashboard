@@ -1,5 +1,5 @@
 # Quizz  
-Cliquer [ici pour voir le quizz](https://lysspiral.github.io/quizz_js/) .
+Cliquer [ici pour voir le quizz](https://lysspiral.github.io/quizz_js/).
 
 **Description** : Questionnaire de vérification de connaissances avec correction automatique 
 
