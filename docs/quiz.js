@@ -52,7 +52,13 @@ function hideElement(element) {
 }
 
 function printOneQuestion(nb, question) {
-    let questHTML = "<div id=\"question"+nb+"\" class=\"question-card\"> <p class=\"question-title\">"+question.questTitle+"</p> <input type=\"radio\" name=\"q"+nb+"\" id=\"q"+nb+"p1\" value=\""+question.questPropArray[0].propValue+"\"> <label for=\"q"+nb+"p1\"> "+question.questPropArray[0].propText+" </label><br> <input type=\"radio\" name=\"q"+nb+"\" id=\"q"+nb+"p2\" value=\""+question.questPropArray[1].propValue+"\"> <label for=\"q"+nb+"p2\"> "+question.questPropArray[1].propText+"  </label><br> <input type=\"radio\" name=\"q"+nb+"\" id=\"q"+nb+"p3\" value=\""+question.questPropArray[2].propValue+"\"> <label for=\"q"+nb+"p3\"> "+question.questPropArray[2].propText+"  </label><br><p id=\"question"+nb+"Indice\" class=\"hidden-default\"><strong>Indice</strong><br>"+question.questClue+"<br><p id=\"question"+nb+"Correction\" class=\"hidden-default\"><strong>Correction</strong><br>"+question.questCorrectionText+"</p> </div>";
+    var questHTML = "<div id=\"question"+nb+"\" class=\"question-card\"> <p class=\"question-title\">"+question.questTitle+"</p>";
+
+	for (let i=0; i<question.questPropArray.length; i++) {
+ 	questHTML += "<input type=\"radio\" name=\"q"+nb+"\" id=\"q"+nb+"p"+(i+1)+"\" value=\""+question.questPropArray[i].propValue+"\"> <label for=\"q"+nb+"p"+(i+1)+"\"> "+question.questPropArray[i].propText+" </label><br>"
+ 	}
+
+ 	questHTML += "<br><p id=\"question"+nb+"Indice\" class=\"hidden-default\"><strong>Indice</strong><br>"+question.questClue+"<br><p id=\"question"+nb+"Correction\" class=\"hidden-default\"><strong>Correction</strong><br>"+question.questCorrectionText+"</p> </div>";
 
     document.getElementById("finalValidZone").insertAdjacentHTML("beforebegin", questHTML);
 }
@@ -72,7 +78,7 @@ function getSelectedAnswer(name) {
     //console.log(answersPossible);
     let i = 0
     
-    while (i<3) {
+    while (i<answersPossible.length) {
         if (answersPossible[i].checked) {
             //console.log(answersPossible[i].value);
             return answersPossible[i].value;
@@ -199,7 +205,6 @@ function recordAnswers(quiz) {
 
 function validateQuiz(quizCount) {
     if (document.getElementById("finalValid").checked) {
-
         if (allQuestionsAnswered(quizCount)){
             activateElement(document.getElementById("btnValid"));
             hideElement(document.getElementById("score"));
